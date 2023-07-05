@@ -70,9 +70,19 @@ ros2 run teleop_twist_keyboard teleop_twist_keyboard
 
 ### Computer Setup
 
-On your computer, clone and build this, and source the setup shell scripts.
+On your computer, install rviz2.
 
-![Image of rviz with custom configuration](https://iroboteducation.github.io/create3_docs/examples/data/create3_lidar_rviz.png)
+```
+sudo apt install ros-galactic-rviz2
+```
+
+If you haven't already, clone and build this repository following the instructions in the README.md.
+Then source the setup shell scripts.
+
+```
+source ~/create3_examples_ws/install/local_setup.sh
+```
+
 
 On your computer, start rviz2.
 
@@ -80,9 +90,14 @@ On your computer, start rviz2.
 rviz2
 ```
 
-If this package is installed on your computer, you will find `create3_lidar.rviz` in `create3_examples_ws/install/share/create3_lidar/rviz`.
-Within rviz2, you can use the menu bar to select this file using `File` -> `Open Config`.
+![Image of rviz with custom configuration](https://iroboteducation.github.io/create3_docs/examples/data/create3_lidar_rviz.png)
+
+Within rviz2, use the menu bar to open a configuration file by selecting `File` -> `Open Config`.
+Navigate to and select `create3_lidar.rviz` in `create3_examples_ws/install/share/create3_lidar/rviz`.
+
 This file will configure rviz2 to subscribe to the laser, the occupancy map, and display the `base_footprint` tf frame that the laser is building off of from the map frame.
+
+
 
 ## Tips and Tricks
 
