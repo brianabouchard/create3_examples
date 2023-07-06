@@ -42,7 +42,7 @@ Note that all STLs of brackets referenced in this example are found in our [crea
 
 ### SBC Setup
 
-On the SBC, clone and build this, and source the setup shell scripts.
+On the SBC, clone and build the [create3_examples repository](https://github.com/iRobotEducation/create3_examples), and source the setup shell scripts.
 
 Start the sensors launch script, which includes the LIDAR driver and transform from the laser scan to the robot:
 
@@ -50,7 +50,7 @@ Start the sensors launch script, which includes the LIDAR driver and transform f
 ros2 launch create3_lidar sensors_launch.py
 ```
 
-In a separate terminal run slam toolbox:
+In a separate terminal, source the setup shell scripts then run slam toolbox:
 
 ```bash
 ros2 launch create3_lidar slam_toolbox_launch.py
@@ -106,6 +106,8 @@ This file will configure rviz2 to subscribe to the laser, the occupancy map, and
 ### Troubleshooting
 
 * Ensure the robot, SBC, and computer are all on the same network, using the same middleware.
+* The SBC should be connected to the robot through usb0 (not via Wi-Fi).
+* If using Fast DDS, make sure to have multicast enabled.
 * If using CycloneDDS, and you are using multiple network interfaces on either the SBC or the computer, be sure to set up your [XML profile(s)](https://iroboteducation.github.io/create3_docs/setup/xml-config/) properly.
 
 [^1]: Raspberry Pi® is a trademark of Raspberry Pi Trading.
